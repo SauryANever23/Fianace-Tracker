@@ -1,0 +1,15 @@
+Finance Tracker App:
+
+frist ask for what it wants to do;
+
+choices:
+
+Main(interface)
+
+choices:
+
+current income(monthy):
+balance:
+expenditure(montly)
+investing: 
+current inflation: 
