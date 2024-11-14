@@ -1,3 +1,8 @@
+git handling:
+[
+    https://github.com/SauryANever23/Fianace-Tracker.git
+]
+
 Finance Tracker App:
 
 frist ask for what it wants to do;
