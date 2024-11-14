@@ -21,8 +21,25 @@ class Finance():
             time.sleep(0.5)
             Finance.balance_information()
         
-        with open('balance.txt', 'w') as f:
+        with open('balance.txt', 'a') as f:
             f.write(str(add_choice))
+
+    def view_information() -> None:
+        """
+        os.system('cls')  # Clear the screen
+        current_balance = Finance.get_balance()
+        print(f"Current balance: ${current_balance}")
+        total_expenses = Finance.get_total_expenses()
+        print(f"Total expenses: ${total_expenses}")
+        """
+
+        os.system('cls')
+        
+        
+        
+        
+
+
 
     def balance_information() -> None:
         """
