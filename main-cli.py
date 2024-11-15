@@ -18,10 +18,10 @@ class Finance():
             add_choice: int = int(input("Enter the amount to deposit (or type 'exit' to exit): "))
         except ValueError:
             print("Invalid input. Please enter a number.")
-            time.sleep(0.5)
+            # time.sleep(0.5)
             Finance.balance_information()
         
-        with open('C:\code\dev\projects\finance-tracker\Fianace-Tracker\balance.txt', 'a') as f:
+        with open('balance.txt', 'a') as f:
             f.write(str(add_choice))
 
     def view_information() -> None:
@@ -35,8 +35,9 @@ class Finance():
 
         os.system('cls')
 
-        with open('C:\code\dev\projects\finance-tracker\Fianace-Tracker\balance.txt', 'r') as f:
-            print(f"Balance: {f.read}")
+        with open('balance.txt', 'r') as f:
+            f.read()
+        
         
 
     def balance_information() -> None:
@@ -107,8 +108,6 @@ def main() -> None:
     """
     The main code and application is wriiten in this app
     """
-
-    Finance.menu_screen()
 
     Finance.menu_screen()
 
