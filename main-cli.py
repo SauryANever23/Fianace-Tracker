@@ -1,5 +1,8 @@
 import os
 import time
+import pandas as pd 
+import numpy as np
+
 class Finance():
 
     def add_balance() -> None:
