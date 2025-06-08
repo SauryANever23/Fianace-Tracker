@@ -1,7 +1,12 @@
 import os
 import time
+import sys
 
 class Finance():
+
+    def brk():
+        print("\a")
+        input("\n\npress enter to continue \n")
 
     def add_balance() -> None:
         """
@@ -68,13 +73,17 @@ class Finance():
 
         if balance_choice == 1:
             balance = Finance.view_information()
+            brk()
             print(f"amount: NRs. {balance}")
         elif balance_choice == 2:
             Finance.add_balance()
+            brk()
         elif balance_choice == 3:
             Finance.remove_balance()
+            brk()
         else:
             print("Invalid choice. Please try again.")
+            brk()
 
     def menu_screen() -> None:
         """
@@ -82,9 +91,9 @@ class Finance():
         this will ajorly be something of no 
         """
         os.system('clear')  # Clear the screen
-
         
-        print(""" 
+        while True: 
+            print(""" 
             ''''''''''''''''''''''''''''''''''''''''
                 F I N A N C E   T R A C K E R
             ''''''''''''''''''''''''''''''''''''''''
@@ -96,20 +105,22 @@ class Finance():
               [4] Inflation, Adjustments, etc
               [5] Exit
                     """)
-        choice = int(input("Enter your choice: "))
+            choice = int(input("Enter choice: "))
 
-        if choice == 1:
-            Finance.balance_information()
-        elif choice == 2:
-            Finance.expenditure_status()
-        elif choice == 3:
-            Finance.invetments()
-        elif choice == 4:
-            Finance.inflation()
-        elif choice == 5:
-            print("Exiting...")
-        else:
-            print("Invalid choice. Please try again.")
+            if choice == 1:
+                Finance.balance_information()
+            elif choice == 2:
+                Finance.expenditure_status()
+            elif choice == 3:
+                Finance.invetments()
+            elif choice == 4:
+                Finance.inflation()
+            elif choice == 5:
+                sys.exit()
+                break
+                print("Exiting...")
+            else:
+                print("Invalid choice. Please try again.")
 
 
 
@@ -117,7 +128,6 @@ def main() -> None:
     """
     The main code and application is wriiten in this app
     """
-
     Finance.menu_screen()
 
 if __name__ == '__main__':
