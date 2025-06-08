@@ -22,11 +22,11 @@ class Finance():
             # time.sleep(0.5)
             Finance.balance_information()
         
-        with open('balance.txt', 'a') as f:
+        with open('balance.txt', 'r') as f:
             b1 = f.read()
         b2 = int(b1) + int(add_choice)
 
-        with open('balance.txt', 'a') as r:
+        with open('balance.txt', 'w') as r:
             r.write(str(b2))
 
     def view_information() -> str:
