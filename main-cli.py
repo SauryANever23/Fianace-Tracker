@@ -84,6 +84,33 @@ class Finance():
         else:
             print("Invalid choice. Please try again.")
             Finance.brk()
+    
+    
+    def expenditureStatus(amount) -> None:
+        """
+        Features to be added. 
+        Features:
+        1. take the amount spent
+        2. take the discription to the amount spent
+        3. decide if the amount spent is a waste or worth it or Investments 
+          |---> (simply, stating difference between assets and liabilities)
+        4. ---------(feature yet to add)-------------
+        """
+        Finance.brk()
+        pass
+
+    def investments() -> None:
+        """
+        Featues Yet to add
+        features to add:
+        1. summary of portfolio
+        2. where the assets are kept
+        3. information and tips on investing
+        4. Advanced feature: get information from the internet about the investment using HTTP requests and make a report based on          it
+
+        """
+        Finance.brk()
+        pass
 
     def menu_screen() -> None:
         """
