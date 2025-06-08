@@ -51,7 +51,34 @@ class Finance():
         except:
             print("File not found")
         
+    
+    def remove_balance() -> None:
+        """
+        os.system('clear')  # Clear the screen
+        simply removes balance from balance.txt file
+
+        """
+        os.system("clear")
+
+        with open('balance.txt', 'r') as f:
+            balance = int(f.read())
         
+        while true:
+            amount_rm = int(input("Enter amount to remove: "))
+
+            if amount_rm > balance:
+                print("Not enough")
+                
+            else:
+                break
+
+        new_amount = balance - amount_rm
+
+        with open('balance.txt', 'w') as r:
+            r.write(new_amount)
+        
+
+
 
     def balance_information() -> None:
         """
