@@ -59,11 +59,14 @@ class Finance():
 
         """
         os.system("clear")
-
-        with open('balance.txt', 'r') as f:
-            balance = int(f.read())
+        try:
+            with open('balance.txt', 'r') as f:
+                balance = int(f.read())
+        except:
+            with open('balance.txt', 'w') as f:
+                f.write("0")
         
-        while true:
+        while True:
             amount_rm = int(input("Enter amount to remove: "))
 
             if amount_rm > balance:
@@ -73,9 +76,15 @@ class Finance():
                 break
 
         new_amount = balance - amount_rm
+        
+        why = input("Where did you spent it?: ")
 
         with open('balance.txt', 'w') as r:
-            r.write(new_amount)
+            r.write(str(new_amount))
+
+        with open('expense-log.txt', 'wa') as q:
+            summary = f"\nAmount spent: {new_amount} for: '{why}' \n"
+            q.write(summary)
         
 
 
