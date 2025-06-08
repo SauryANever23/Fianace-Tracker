@@ -14,7 +14,7 @@ class Finance():
         print(f"New balance: ${new_balance}")
         """
 
-        os.system('cls')
+        os.system('clear')
         try:
             add_choice: int = int(input("Enter the amount to deposit (or type 'exit' to exit): "))
         except ValueError:
@@ -23,9 +23,13 @@ class Finance():
             Finance.balance_information()
         
         with open('balance.txt', 'a') as f:
-            f.write(str(add_choice))
+            b1 = f.read()
+        b2 = int(b1) + int(add_choice)
 
-    def view_information() -> None:
+        with open('balance.txt', 'a') as r:
+            r.write(str(b2))
+
+    def view_information() -> str:
         """
         os.system('cls')  # Clear the screen
         current_balance = Finance.get_balance()
@@ -34,10 +38,13 @@ class Finance():
         print(f"Total expenses: ${total_expenses}")
         """
 
-        os.system('cls')
-
-        with open('balance.txt', 'r') as f:
-            f.read()
+        os.system('clear')
+        try:
+            with open('balance.txt', 'r') as f:
+                balance = f.read()
+                return balance
+        except:
+            print("File not found")
         
         
 
@@ -45,7 +52,7 @@ class Finance():
         """
         This function will display the current balance and total expenses.
         """
-        os.system('cls')  # Clear the screen
+        os.system('clear')  # Clear the screen
         print("""
         -------------------
         O P T I O N S
@@ -60,7 +67,8 @@ class Finance():
         balance_choice = int(input("Enter Choice(use int: )"))
 
         if balance_choice == 1:
-            Finance.view_information()
+            balance = Finance.view_information()
+            print(f"amount: NRs. {balance}")
         elif balance_choice == 2:
             Finance.add_balance()
         elif balance_choice == 3:
@@ -73,7 +81,7 @@ class Finance():
         This functino will display the menu screen at the begginig of the application:
         this will ajorly be something of no 
         """
-        os.system('cls')  # Clear the screen
+        os.system('clear')  # Clear the screen
 
         
         print(""" 
