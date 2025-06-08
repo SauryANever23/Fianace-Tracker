@@ -73,17 +73,17 @@ class Finance():
 
         if balance_choice == 1:
             balance = Finance.view_information()
-            brk()
             print(f"amount: NRs. {balance}")
+            Finance.brk()
         elif balance_choice == 2:
             Finance.add_balance()
-            brk()
+            Finance.brk()
         elif balance_choice == 3:
             Finance.remove_balance()
-            brk()
+            Finance.brk()
         else:
             print("Invalid choice. Please try again.")
-            brk()
+            Finance.brk()
 
     def menu_screen() -> None:
         """
