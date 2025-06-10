@@ -67,13 +67,17 @@ class Finance():
                 f.write("0")
         
         while True:
-            amount_rm = int(input("Enter amount to remove: "))
+            try:
+                amount_rm = int(input("Enter amount to remove: "))
 
-            if amount_rm > balance:
-                print("Not enough")
+                if amount_rm > balance:
+                    print("Not enough")
                 
-            else:
-                break
+                else:
+                    break
+            except Exception as e:
+                print(f"Please Enter valid value: error occoured\n {e}\n")
+                os.system('cls')
 
         new_amount = balance - amount_rm
         
@@ -82,8 +86,8 @@ class Finance():
         with open('balance.txt', 'w') as r:
             r.write(str(new_amount))
 
-        with open('expense-log.txt', 'wa') as q:
-            summary = f"\nAmount spent: {new_amount} for: '{why}' \n"
+        with open('expense-log.txt', 'a') as q:
+            summary = f"\n{amount_rm}: {why}\n"
             q.write(summary)
         
 
@@ -122,7 +126,7 @@ class Finance():
             Finance.brk()
     
     
-    def expenditureStatus(amount) -> None:
+    def expenditureStatus() -> None:
         """
         Features to be added. 
         Features:
@@ -132,8 +136,13 @@ class Finance():
           |---> (simply, stating difference between assets and liabilities)
         4. ---------(feature yet to add)-------------
         """
-        Finance.brk()
-        pass
+        with open('expense-log.txt', 'r') as f:
+            expense_info = f.read()
+        print(f"You expenditure log is: {expense_info}")
+        
+        for _ in expense_info:
+            print(_)
+
 
     def investments() -> None:
         """
@@ -173,7 +182,7 @@ class Finance():
             if choice == 1:
                 Finance.balance_information()
             elif choice == 2:
-                Finance.expenditure_status()
+                Finance.expenditureStatus()
             elif choice == 3:
                 Finance.invetments()
             elif choice == 4:
