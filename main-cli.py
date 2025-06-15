@@ -137,12 +137,10 @@ class Finance():
         4. ---------(feature yet to add)-------------
         """
         with open('expense-log.txt', 'r') as f:
-            expense_info = f.read()
+            expense_info = f.readlines()
         print(f"You expenditure log is: {expense_info}")
         
-        for _ in expense_info:
-            print(_)
-
+        print("Feautres Yet to ADD")
 
     def investments() -> None:
         """
@@ -154,6 +152,8 @@ class Finance():
         4. Advanced feature: get information from the internet about the investment using HTTP requests and make a report based on          it
 
         """
+        
+        print("feautres-Yet-to-do")
         Finance.brk()
         pass
 
